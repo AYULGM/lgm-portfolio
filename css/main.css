@@ -18,7 +18,7 @@ body {
   line-height: 1.6;
   background-color: #ffffff;
   color: #111111;
-  transition: background-color 0.25s, color 0.25s;
+  transition: background-color 0.5s, color 0.5s;
 }
 
 body.dark {
@@ -48,7 +48,7 @@ a {
   min-height: 100vh;
 }
 
-/* 사이드바: fixed로 변경 */
+/* 사이드바 */
 .sidebar {
   position: fixed;
   top: 0;
@@ -142,6 +142,19 @@ body.dark .social:hover {
   font-size: 14px;
 }
 
+.nav-link::after {
+  content: "";
+  display: block;
+  width: 0;
+  transition: width 0.5s;
+  height: 1px;
+  background-color: #e0c4fa;
+  position: absolute;
+}
+.nav-link:hover::after {
+  width: 80px;
+}
+
 .nav-link.active,
 .nav-link:hover {
   color: #111111;
@@ -162,7 +175,7 @@ body.dark .nav-link:hover {
 .theme-btn {
   margin-top: auto;
   padding: 8px 10px;
-  border: 1px solid orange;
+  border: 2px solid orange;
   background: none;
   color: inherit;
   cursor: pointer;
@@ -170,7 +183,7 @@ body.dark .nav-link:hover {
 }
 
 body.dark .theme-btn {
-  border: 1px solid #222222;
+  border: 2px solid #666666;
 }
 
 /* 메인 컬럼: 사이드바 너비만큼 margin-left */
@@ -243,7 +256,7 @@ body.dark .project {
   border: 1px solid #222222;
 }
 
-/* 작은 화면에서 한 칸으로 */
+/* 모바일 사용자를 위한 반응형 */
 @media (max-width: 800px) {
   .container {
     flex-direction: column;
