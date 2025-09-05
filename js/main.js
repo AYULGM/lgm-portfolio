@@ -39,19 +39,19 @@ window.addEventListener("scroll", function() {
 updateActiveNavOnScroll();
 
 /* 테마 초기값 로드 */
-(function() {
-  try {
-    const saved = localStorage.getItem("theme");
-    if (saved === "dark") {
-      document.body.classList.add("dark");
-      if (themeBtn) themeBtn.textContent = "☀️ Toggle Theme";
-    } else {
-      if (themeBtn) themeBtn.textContent = "🌙 Toggle Theme";
-    }
-  } catch (e) {
-    if (themeBtn) themeBtn.textContent = "🌙 Toggle Theme";
-  }
-})();
+// (function() {
+//   try {
+//     const saved = localStorage.getItem("theme");
+//     if (saved === "dark") {
+//       document.body.classList.add("dark");
+//       if (themeBtn) themeBtn.textContent = "☀️ Light Mode";
+//     } else {
+//       if (themeBtn) themeBtn.textContent = "🌙 Dark Mode";
+//     }
+//   } catch (e) {
+//     if (themeBtn) themeBtn.textContent = "🌙 Dark Mode";
+//   }
+// })();
 
 /* 테마 토글 버튼 */
 if (themeBtn) {
@@ -61,14 +61,14 @@ if (themeBtn) {
       try {
         localStorage.setItem("theme", "light");
       } catch (e) {}
-      themeBtn.textContent = "🌙 Toggle Theme";
+      themeBtn.textContent = "🌙 Dark Mode";
       themeBtn.setAttribute("aria-pressed", "false");
     } else {
       document.body.classList.add("dark");
       try {
         localStorage.setItem("theme", "dark");
       } catch (e) {}
-      themeBtn.textContent = "☀️ Toggle Theme";
+      themeBtn.textContent = "☀️ Light Mode";
       themeBtn.setAttribute("aria-pressed", "true");
     }
   });

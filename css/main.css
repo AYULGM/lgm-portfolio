@@ -194,11 +194,14 @@ body.dark .theme-btn {
 }
 
 #about .about__img {
-  width: 30%;
+  /* display: flex; */
+  /* justify-content: flex-start */
+  /* margin-left: 5%; */
+  width: 100%;
 }
 
 #about .about__img img {
-  width: 50%;
+  width: 20%;
   border-radius: 50%;
   box-shadow: 5px 5px 20px 5px rgba(0, 0, 0, 0.2);
 }
